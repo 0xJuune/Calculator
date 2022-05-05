@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geostar&display=swap');
+
+body {
+    font-family: 'Fredoka One', sans-serif;
+    color: hsl(0, 57%, 95%);
+    background-color: hsl(207, 79%, 72%);
+}
+
+h1 {
+    color: hsl(207, 57%, 95%);
+    font-size: 35pt;
+    text-shadow: 5px 5px 8px hsl(207, 79%, 67%), 
+    -4px -4px 8px hsl(207, 79%, 78%);
+    margin: 8px;
+    padding: 0;
+}
+
+button {
+    border-radius: 25px;
+    margin: 0px;
+    padding: 15px;
+    border: none;
+    background-color: hsl(207, 79%, 72%);
+    box-shadow: 
+    5px 5px 12px hsl(207, 79%, 67%), 
+    -5px -5px 12px hsl(207, 79%, 78%);
+    font-family: inherit;
+    color: inherit;
+    font-size: medium;
+    font-weight: 400;
+    
+}
+
+button:hover {
+    color: hsl(207, 47%, 53%)
+}
+
+button:active {
+    box-shadow: 
+    -5px -5px 15px hsl(207, 79%, 67%), 
+    5px 5px 15px hsl(207, 79%, 80%);
+}
+
+.hide {
+    display: none;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    color: hsl(207, 47%, 53%);
+}
+
+.visualFeed {
+    font-family: Geostar;
+    font-size: xx-large;
+    text-align: center;
+    padding-top: 15px;
+    background-color: hsl(208, 85%, 81%);
+    color: hsl(207, 47%, 53%);
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: -5px -5px 8px hsl(207, 79%, 67%), 
+    4px 4px 8px hsl(207, 79%, 78%);
+    text-shadow: 3px 3px 6px hsl(207, 79%, 67%);
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 60px;
+}
+
+.scoreText {
+    font-size: larger;
+}
+
+.gridContainer {
+    display: grid;
+    width: 500px;
+    height: 500px;
+    padding: 30px;
+    border: 0px;
+    border-radius: 16px;
+    /* background-color: hsl(207, 12%, 48%); */
+    background-color: hsl(207, 79%, 72%);
+    gap: 15px;
+    box-shadow: 5px 5px 8px hsl(207, 79%, 67%), 
+    -4px -4px 8px hsl(207, 79%, 78%);
+}
+
+.gridItem,
+.gridItemNumber {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: hsla(60, 10%, 6%, 0.705); */
+    border: 0px;
+    border-radius: 16px;
+    font-size: x-large;
+}

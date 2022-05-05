@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="header">
+            <h1>CALC-U-L8R</h1>
+            <div class="scoreText">Mathematical!</div>
+        </div>
+     
+        
+     
+        <div class="gridContainer" style="grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 1fr);">
+            <div class="visualFeed" style="grid-column: span 4; text-align: end; padding-right: 15px;">0</div>
+            <button class="gridItem" id="AC">AC</button>
+            <button class="gridItem" id="/">÷</button> 
+            <button class="gridItem" id="*">x</button> 
+            <button class="gridItem" id="-">-</button> 
+            <button class="gridItemNumber" id="7">7</button> 
+            <button class="gridItemNumber" id="8">8</button> 
+            <button class="gridItemNumber" id="9">9</button>
+            <button class="gridItem" id="+" style="grid-row: span 2">+</button> 
+            <button class="gridItemNumber" id="4">4</button> 
+            <button class="gridItemNumber" id="5">5</button> 
+            <button class="gridItemNumber" id="6">6</button>
+            <button class="gridItemNumber" id="1">1</button>
+            <button class="gridItemNumber" id="2">2</button> 
+            <button class="gridItemNumber" id="3">3</button> 
+            <button class="gridItem" id="=" style="grid-row: span 2">=</button>            
+            <button class="gridItemNumber" id="0" style="grid-column: span 2">0</button>             
+            <button class="gridItemNumber" id=".">.</button> 
+
+            
+        </div>
+    
+
+<!--         <div class="buttonContainer">
+            
+            <button id="start">Start Game!</button>
+            <button id="r" class="hide">Rock</button>
+            <button id="p" class="hide">Paper</button>
+            <button id="s" class="hide">Scissors</button>
+        </div> -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
