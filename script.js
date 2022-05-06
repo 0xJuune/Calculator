@@ -2,32 +2,83 @@
 const calcButtonNumber = document.querySelectorAll('.gridItemNumber')
 const calcButtonFunction = document.querySelectorAll('.gridItem')
 const display = document.querySelector('.visualFeed')
-const displayContent = document.querySelector('.visualFeed').textContent
+const subDisplay = document.querySelector('#subDisplay')
+
 
 let numberStore = '0'
-let numberEval = Number(numberStore)
+let numberStoreTwo = '0'
+let expressionDisplay = null
+let operatorStore = null
 
 
 //funcs
-// let addToDisplay = (number) => {
-//     (display.textContent == 0) ? display.textContent = number: display.textContent += number ;
-// }
+let test = (ya) => {
+        if (numberStore == 0 || operatorStore == 'equal')  {
+            numberStore = ya;
+            (operatorStore == 'equal') ? operatorStore = null: operatorStore = operatorStore;
+        }
+        else {
+            numberStore += ya;          
+        }
+}
+
+
 let addToNumberStore = (idNumber) => {
-    (numberStore.length < 15) ? ((numberStore == 0) ? numberStore = idNumber: numberStore += idNumber): console.log('too big');
+    if (numberStore.length < 15) {
+        test(idNumber)}
+    else {
+         console.log('too big');
+    }
     display.textContent = numberStore;
-    numberEval = Number(numberStore);
 }
 
 let functionButton = (button) => {
     switch (button) {
         case 'AC':
-            
+            return clearMath()
+        case '-':
+            // move display to small screen(expressionStore) add - symbol, 
+            operatorStore = 'minus';
+            expressionDisplay = `${numberStore} -` 
+            subDisplay.textContent = expressionDisplay;
+            numberStoreTwo = numberStore;
+            numberStore = '0';
+            display.textContent = numberStore;
+            break;
+        case '=':
+            numberStore = evaluate(operatorStore)
+            numberStore = numberStore.toString()
+            display.textContent = numberStore
+            operatorStore = 'equal'
+            // evaluate(operatorStore)
+            break;
+        default:
+            return null
     }
+
     
 }
 
 let clearMath = () => {
-    
+    numberStore = '0'; 
+    operatorStore = null;
+    display.textContent = numberStore;
+    subDisplay.textContent = 0;
+}
+
+let evaluate = (operator) => {
+    let a = Number(numberStoreTwo)
+    let b = Number(numberStore)
+    switch (operator) {
+        case 'minus':
+            subDisplay.textContent = `${a} - ${b} = `;
+            return a - b;
+        default:
+            return "fuck";
+        // case 'equal':
+        //     numberStore = '0';
+        //     display.textContent = numberStore;
+}
 }
 
 

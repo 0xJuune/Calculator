@@ -11,14 +11,22 @@
     <div class="mainContainer">
         <div class="header">
             <h1>CALC-U-L8R</h1>
-            <div class="scoreText">Mathematical!</div>
+            <div class="subheader">Mathematical!</div>
         </div>
      
         
      
         <div class="gridContainer" style="grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(6, 1fr);">
-            <div class="visualFeed" style="grid-column: span 4; text-align: end; padding-right: 15px;">0</div>
+            <!-- <div class="visualFeed" style="grid-column: span 4; text-align: end; padding-right: 15px;">0</div> -->
+            <div class="visualFeedStyle" style="grid-column: span 4; text-align: end; padding-right: 15px;">
+                <div id="subDisplay">
+                     0
+                </div>
+                <div class="visualFeed" id="mainDisplay">
+                    0
+                </div>
+            </div>
             <button class="gridItem" id="AC">AC</button>
             <button class="gridItem" id="/">÷</button> 
             <button class="gridItem" id="*">x</button> 

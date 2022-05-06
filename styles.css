@@ -60,11 +60,11 @@ button:active {
     color: hsl(207, 47%, 53%);
 }
 
-.visualFeed {
+.visualFeedStyle {
     font-family: Geostar;
     font-size: xx-large;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 9px;
     background-color: hsl(208, 85%, 81%);
     color: hsl(207, 47%, 53%);
     border: 0px;
@@ -72,6 +72,10 @@ button:active {
     box-shadow: -5px -5px 8px hsl(207, 79%, 67%), 
     4px 4px 8px hsl(207, 79%, 78%);
     text-shadow: 3px 3px 6px hsl(207, 79%, 67%);
+}
+
+#subDisplay{
+    font-size: medium;
 }
 
 .mainContainer {
@@ -82,7 +86,7 @@ button:active {
     gap: 60px;
 }
 
-.scoreText {
+.subheader{
     font-size: larger;
 }
 
