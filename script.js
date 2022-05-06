@@ -12,23 +12,28 @@ let operatorStore = null
 
 
 //funcs
-let test = (ya) => {
+let resultOverride = (number) => {
         if (numberStore == 0 || operatorStore == 'equal')  {
-            numberStore = ya;
+            numberStore = number;
             (operatorStore == 'equal') ? operatorStore = null: operatorStore = operatorStore;
         }
         else {
-            numberStore += ya;          
+            numberStore += number;          
         }
 }
 
-
 let addToNumberStore = (idNumber) => {
     if (numberStore.length < 15) {
-        test(idNumber)}
+        resultOverride(idNumber)}
     else {
          console.log('too big');
     }
+    display.textContent = numberStore;
+}
+let operationUpdateDisplay = () => {
+    subDisplay.textContent = expressionDisplay;
+    numberStoreTwo = numberStore;
+    numberStore = '0';
     display.textContent = numberStore;
 }
 
@@ -37,26 +42,34 @@ let functionButton = (button) => {
         case 'AC':
             return clearMath()
         case '-':
-            // move display to small screen(expressionStore) add - symbol, 
             operatorStore = 'minus';
             expressionDisplay = `${numberStore} -` 
-            subDisplay.textContent = expressionDisplay;
-            numberStoreTwo = numberStore;
-            numberStore = '0';
-            display.textContent = numberStore;
+            operationUpdateDisplay()
+            break;
+        case '+':
+            operatorStore = 'plus';
+            expressionDisplay = `${numberStore} +` 
+            operationUpdateDisplay()
+            break;
+        case '*':
+            operatorStore = 'multiply';
+            expressionDisplay = `${numberStore} x` 
+            operationUpdateDisplay()
+            break;
+        case '/':
+            operatorStore = 'divide';
+            expressionDisplay = `${numberStore} /` 
+            operationUpdateDisplay()
             break;
         case '=':
             numberStore = evaluate(operatorStore)
             numberStore = numberStore.toString()
             display.textContent = numberStore
             operatorStore = 'equal'
-            // evaluate(operatorStore)
             break;
         default:
             return null
     }
-
-    
 }
 
 let clearMath = () => {
@@ -73,20 +86,19 @@ let evaluate = (operator) => {
         case 'minus':
             subDisplay.textContent = `${a} - ${b} = `;
             return a - b;
+        case 'plus':
+            subDisplay.textContent = `${a} + ${b} = `;
+            return a + b;
+        case 'multiply':
+            subDisplay.textContent = `${a} x ${b} = `;
+            return a * b;
+        case 'divide':
+            subDisplay.textContent = `${a} / ${b} = `;
+            return ((b == 0) ? 'ERR: div by 0': a / b);
         default:
-            return "fuck";
-        // case 'equal':
-        //     numberStore = '0';
-        //     display.textContent = numberStore;
+            return numberStore;
 }
 }
-
-
-
-
-
-//stuff
-
 
 
 calcButtonNumber.forEach((button) =>
@@ -96,15 +108,3 @@ calcButtonNumber.forEach((button) =>
 calcButtonFunction.forEach((button) =>
   button.addEventListener('click', () => functionButton(button.id)) 
 )
-
-
-
-
-
-
-
-
-//addEventListener for setting variables/array items by #ID, (html buttons have ID for 0-9, and + - * /, 
-//for calculation id = will call a func. That func will reference the parsed IDs in the array/variables. 
-
-// display var gets stored when an operator button is pressed, and then display var is cleared. 
