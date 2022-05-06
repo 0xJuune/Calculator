@@ -61,7 +61,7 @@ let functionButton = (button) => {
             expressionDisplay = `${numberStore} /` 
             operationUpdateDisplay()
             break;
-        case '=':
+        case 'equal':
             numberStore = evaluate(operatorStore)
             numberStore = numberStore.toString()
             display.textContent = numberStore

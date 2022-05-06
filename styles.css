@@ -42,9 +42,6 @@ button:active {
     5px 5px 15px hsl(207, 79%, 80%);
 }
 
-.hide {
-    display: none;
-}
 
 .buttonContainer {
     display: flex;
@@ -97,7 +94,6 @@ button:active {
     padding: 30px;
     border: 0px;
     border-radius: 16px;
-    /* background-color: hsl(207, 12%, 48%); */
     background-color: hsl(207, 79%, 72%);
     gap: 15px;
     box-shadow: 5px 5px 8px hsl(207, 79%, 67%), 
@@ -109,8 +105,32 @@ button:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: hsla(60, 10%, 6%, 0.705); */
-    border: 0px;
-    border-radius: 16px;
     font-size: x-large;
+}
+
+.gridItem {
+    background-color: hsla(207, 47%, 53%, 0.5);
+    box-shadow: 5px 5px 8px hsl(207, 79%, 67%), 
+    -4px -4px 8px hsl(207, 79%, 75%);
+}
+
+.gridItem:hover {
+    color: hsl(32, 89%, 64%)
+}
+
+#equal {
+    background-color: hsla(32, 89%, 64%, 0.877);
+}
+
+#equal:hover {
+    color: hsl(205, 33%, 46%);
+}
+
+#AC {
+    background-color: hsl(205, 33%, 46%);
+    color: hsl(32, 89%, 64%);
+}
+
+#AC:hover {
+    color: hsl(0, 57%, 95%)
 }
